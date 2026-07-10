@@ -73,7 +73,7 @@ library
     base >=4.14 && <5,
     first-class-families >=0.8 && <0.9,
     harpie >=0.1.0 && <0.3,
-    numhask >=0.12 && <0.14,
+    numhask >=0.14 && <0.15,
     prettyprinter >=1.7.0 && <1.8,
 
   exposed-modules: Harpie.NumHask
