@@ -75,5 +75,6 @@ library
     harpie >=0.1.0 && <0.3,
     numhask >=0.14 && <0.15,
     prettyprinter >=1.7.0 && <1.8,
+    vector >=0.12 && <0.14,
 
   exposed-modules: Harpie.NumHask

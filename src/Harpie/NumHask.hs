@@ -19,6 +19,7 @@ module Harpie.NumHask
 where
 
 import Data.Functor.Rep
+import Data.Vector.Unboxed qualified as VU
 import Fcf qualified
 import GHC.TypeNats
 import Harpie.Fixed as F hiding (chol, ident, inverse, invtri, mult, undiag)
@@ -129,7 +130,7 @@ instance (FromRational a) => FromRational (Array ('[] :: [Nat]) a) where
 --  [0,1,0],
 --  [0,0,1]]
 ident :: (KnownNats s, Additive a, Multiplicative a) => Array s a
-ident = tabulate (bool zero one . S.isDiag . S.fromFins)
+ident = tabulate (bool zero one . S.isDiag . VU.fromList . S.fromFins)
 
 -- | Expand the array to form a diagonal array
 --
@@ -146,7 +147,7 @@ undiag ::
   ) =>
   Array s a ->
   Array s' a
-undiag a = tabulate (\xs -> bool zero (index a (S.UnsafeFins $ pure $ S.getDim 0 (S.fromFins xs))) (S.isDiag (S.fromFins xs)))
+undiag a = tabulate (\xs -> bool zero (index a (S.UnsafeFins $ pure $ S.getDim 0 (VU.fromList (S.fromFins xs)))) (S.isDiag (VU.fromList (S.fromFins xs))))
 
 -- | Array multiplication.
 --
