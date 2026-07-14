@@ -50,7 +50,7 @@ import NumHask.Prelude as P hiding (Min, cycle, diff, drop, empty, find, length,
 -- []
 -- >>> pretty s
 -- 1
--- >>> let v = range @'[3]
+-- >>> let v = range @[3]
 -- >>> pretty v
 -- [0,1,2]
 -- >>> let m = range @[2,3]
@@ -194,7 +194,7 @@ ident = tabulate (bool zero one . S.isDiag . VU.fromList . S.fromFins)
 
 -- | Expand the array to form a diagonal array
 --
--- >>> pretty $ undiag (range @'[3])
+-- >>> pretty $ undiag (range @[3])
 -- [[0,0,0],
 --  [0,1,0],
 --  [0,0,2]]
