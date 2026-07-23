@@ -77,4 +77,6 @@ library
     prettyprinter >=1.7.0 && <1.8,
     vector >=0.12 && <0.14,
 
-  exposed-modules: Harpie.NumHask
+  exposed-modules:
+    Harpie.NumHask
+    Harpie.NumHask.Matrix
