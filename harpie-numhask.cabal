@@ -72,9 +72,11 @@ library
     adjunctions >=4.4.2 && <4.5,
     base >=4.14 && <5,
     first-class-families >=0.8 && <0.9,
-    harpie >=0.1.0 && <0.3,
+    harpie >=0.1.0 && <0.4,
     numhask >=0.14 && <0.15,
     prettyprinter >=1.7.0 && <1.8,
     vector >=0.12 && <0.14,
 
-  exposed-modules: Harpie.NumHask
+  exposed-modules:
+    Harpie.NumHask
+    Harpie.NumHask.Matrix
